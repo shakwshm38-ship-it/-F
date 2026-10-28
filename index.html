@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الخدمات الإلكترونية - وزارة التعليم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background-color: #006837;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            color: #006837;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .user-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Main Container */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 480px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            text-align: center;
+            border-top: 5px solid #006837;
+            position: relative;
+        }
+
+        /* Shake Animation */
+        .shake {
+            animation: shakeAnim 0.3s ease-in-out;
+        }
+
+        @keyframes shakeAnim {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        /* Screen 1 */
+        .welcome-title {
+            font-size: 1.5rem;
+            color: #006837;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .welcome-desc {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn-green {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-green:hover {
+            background-color: #219653;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Screen 2 */
+        .question-title {
+            font-size: 1.4rem;
+            color: #1a252c;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .plea-text {
+            color: #e74c3c;
+            font-size: 1.2rem;
+            font-weight: 800;
+            background: #fdf2f2;
+            padding: 14px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px dashed #f5c6cb;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+            line-height: 1.5;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            min-height: 60px;
+        }
+
+        .btn-yes {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            flex: 1;
+            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-no {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            flex: 1;
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.2);
+            transition: background-color 0.2s;
+        }
+
+        .btn-no:active {
+            transform: scale(0.96);
+        }
+
+        /* Result Screen */
+        .result-box {
+            padding: 25px;
+            border-radius: 12px;
+            background-color: #e8f8f5;
+            color: #117a65;
+            font-size: 1.3rem;
+            font-weight: bold;
+            line-height: 1.6;
+            border: 2px solid #a3e4d7;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #888;
+            font-size: 0.8rem;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-section">
+            <div class="logo-icon">م</div>
+            <div class="logo-text">وزارة التعليم</div>
+        </div>
+        <div class="user-badge">ولي الأمر</div>
+    </header>
+
+    <main id="mainContainer">
+        <!-- الواجهة الأولى -->
+        <div id="screen1" class="card">
+            <h1 class="welcome-title">مرحباً بك يا رائد شندي</h1>
+            <p class="welcome-desc">أهلاً بك في البوابة الإلكترونية لخدمات أولياء الأمور. يرجى تسجيل الدخول لمتابعة الطلبات.</p>
+            <button class="btn-green" onclick="goToScreen2()">تسجيل الدخول</button>
+        </div>
+
+        <!-- الواجهة الثانية -->
+        <div id="screen2" class="card hidden">
+            <h2 class="question-title">هل ستغيب ابنك يوم الخميس هذا؟</h2>
+            <div id="pleaText" class="plea-text">تكفى تكفى تكفى غيبني 🙏🔥</div>
+            <div class="btn-group">
+                <button class="btn-yes" id="btnYes" onclick="showResult()">صح (نعم)</button>
+                <button class="btn-no" id="btnNo" onclick="onNoClicked()">لا</button>
+            </div>
+        </div>
+
+        <!-- واجهة النتيجة -->
+        <div id="resultScreen" class="card hidden">
+            <div class="result-box">
+                تم اعتماد إجازة الخميس بنجاح! 🎉<br>
+                نتمنى لكم نهاية أسبوع سريعة وسعيدة 🥳
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        جميع الحقوق محفوظة © وزارة التعليم
+    </footer>
+
+    <script>
+        const pleaMessages = [
+            "تكفى تكفى الطلاب كلهم بيغيبوا! 🎒😭",
+            "يا أبوي تكفى ما عندنا دروس الخميس! 🛑",
+            "أبوس رأسك غيبني والله تعبان! 🙏❤️",
+            "تكفى المدرسة فاضية بكرة والكل غايب! 🏃‍♂️",
+            "تكفى اخر مرة وافق ينصر دينك! 🥺🔥",
+            "تكفى تكفى راجع حساباتك واضغط صح! ⚠️"
+        ];
+
+        let msgIndex = 0;
+
+        function goToScreen2() {
+            document.getElementById('screen1').classList.add('hidden');
+            document.getElementById('screen2').classList.remove('hidden');
+        }
+
+        function onNoClicked() {
+            const card = document.getElementById('screen2');
+            const pleaText = document.getElementById('pleaText');
+
+            // تغيير الكلام بالترتيب
+            pleaText.innerText = pleaMessages[msgIndex];
+            msgIndex = (msgIndex + 1) % pleaMessages.length;
+
+            // إضافة تأثير اهتزاز بسيط للكارت
+            card.classList.remove('shake');
+            void card.offsetWidth; // Trigger reflow
+            card.classList.add('shake');
+        }
+
+        function showResult() {
+            document.getElementById('screen2').classList.add('hidden');
+            document.getElementById('resultScreen').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
